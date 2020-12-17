@@ -4,21 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-appdirs = "*"
-attrs = "*"
-black = "*"
-click = "*"
-iniconfig = "*"
-mypy-extensions = "*"
-pathspec = "*"
-pluggy = "*"
-py = "*"
-pyparsing = "*"
 pytest = "*"
-regex = "*"
-toml = "*"
-typed-ast = "*"
-typing-extensions = "*"
+black = "*"
 
 [dev-packages]
 
