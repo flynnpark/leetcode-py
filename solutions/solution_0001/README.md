@@ -27,7 +27,7 @@ You can return the answer in any order.
 - -10<sup>9</sup> <= target <= 10<sup>9</sup>
 - **Only one valid answer exists.**
 
-### 해결방법
+## 해결방법
 
 2중 for문을 사용하면 쉽게 가능하기는 하지만 시간 복잡도가 O(n<sup>2</sup>)가 되기 때문에 다른 방법을 생각해야 했다.
 두 번째로 생각했던 방법은 `target` - `num` 결과의 숫자가 존재하는지 확인하고 해당 숫자의 인덱스를 가져오려고 했는데, 문제의 세 번째 예시를 해결하는 데 어려움이 있었고, 결국 해시 테이블을 사용하여 O(n)으로 문제를 해결할 수 있었다.

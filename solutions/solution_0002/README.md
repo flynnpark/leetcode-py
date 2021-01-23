@@ -28,7 +28,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 - `0 <= Node.val <= 9`
 - It is guaranteed that the list represents a number that does not have leading zeros.
 
-### 해결방법
+## 해결방법
 
 Linked List 형태로 입력되는 두 수의 합을 구하여 Linked List 형태로 반환하는 문제. 때문에 입력되는 두 수는 모두 일반적인 숫자 순서를 뒤집어진 상태로 들어온다. 첫 번째 아이템끼리 더하고 두 번째 아이템끼리 더하는 식이다. 뭐 따로 설명할 건 없고 올림수 처리만 잘 하면 될 것 같다. `result`에 더미를 만들기 싫었는데 다른 방법을 생각해내지 못해 더미를 만들어 사용했다.
 
