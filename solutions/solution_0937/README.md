@@ -34,3 +34,11 @@ The digit-logs have a relative order of "dig1 8 1 5 1", "dig2 3 6".</code></pre>
 - `3 <= logs[i].length <= 100`
 - All the tokens of `logs[i]` are separated by a **single** space.
 - `logs[i]` is guaranteed to have an identifier and at least one word after the identifier.
+
+## 해결 방법
+
+문제에서 정렬 조건은 3가지이다. 문자 로그가 숫자 로그 이전에 있을 것, 문자 로그는 컨텐츠로 먼저 정렬되고 컨텐츠가 같다면 구분자로 정렬될 것, 숫자 로그는 입력 순서대로 둘 것. 모든 로그의 첫 번째 아이템은 구분자이며, 내용은 숫자 로그일 경우엔 오직 숫자로 구성되고 문자 로그의 경우엔 숫자로 구성되어 있다.
+
+먼저 내용이 숫자인지 문자인지 구분하여 주어야 한다. `isdigit()` 함수를 이용하여 구분할 수 있으며, 숫자 로그는 내용이 모두 숫자로 구성되기 때문에 `split()` 함수를 이용하여 나온 두 번째 객체가 숫자인지 확인하는 방법으로 구분할 수 있다.
+
+이 중 문자 로그의 경우엔 내용으로 먼저 정렬하고, 내용이 같은 경우엔 구분자로 정렬해야 한다. `sort()` 함수를 사용하면 간단한데, 정렬 조건이 한 번 꼬여져 있으므로 `lambda`를 사용하여 내용으로 먼저 정렬하도록 만들어 주었다.
