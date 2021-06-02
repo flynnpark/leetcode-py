@@ -1,4 +1,4 @@
-# 0001. Two Sum
+# 0001. [Two Sum](https://leetcode.com/problems/two-sum)
 
 Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
 You may assume that each input would have **_exactly_ one solution**, and you may not use thesameelement twice.
