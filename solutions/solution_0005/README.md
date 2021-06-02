@@ -1,4 +1,4 @@
-# 0005. Longest Palindromic Substring
+# 0005. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 Given a string `s`, return _the longest palindromic substring_ in `s`.
 
