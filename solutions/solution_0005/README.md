@@ -6,7 +6,7 @@ Given a string `s`, return _the longest palindromic substring_ in `s`.
 
 <pre><code><strong>Input: s = "babad"</strong>
 <strong>Output:</strong> "bab"
-<strong>Note:</code> "aba" is also a valid answer.</pre>
+<strong>Note:</strong> "aba" is also a valid answer.</code></pre>
 
 #### Example 2:
 
