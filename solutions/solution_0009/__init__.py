@@ -1,3 +1,3 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        pass
+        return str(x) == str(x)[::-1]
