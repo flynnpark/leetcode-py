@@ -1,5 +1,4 @@
-from typing import List
-from typing_extensions import TypedDict
+from typing import List, TypedDict
 from solutions.solution_0014 import Solution
 
 
@@ -11,7 +10,7 @@ class CaseDict(TypedDict):
 test_cases: List[CaseDict] = [
     {"input": ["flower", "flow", "flight"], "expected": "fl"},
     {"input": ["dog", "racecar", "car"], "expected": ""},
-    {"input": ["cir","car"], "expected": "c"},
+    {"input": ["cir", "car"], "expected": "c"},
 ]
 
 
