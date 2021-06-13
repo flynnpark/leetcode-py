@@ -13,6 +13,7 @@ test_cases: List[CaseDict] = [
     {"input": "(]", "expected": False},
     {"input": "([)]", "expected": False},
     {"input": "{[]}", "expected": True},
+    {"input": "(", "expected": False},
 ]
 
 
