@@ -1,5 +1,6 @@
 from typing import List, TypedDict
-from solutions.solution_0021 import Solution
+
+from solutions.solution_0035 import Solution
 
 
 class CaseInput(TypedDict):
