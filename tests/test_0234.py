@@ -1,5 +1,5 @@
 from typing import List, TypedDict
-from solutions.solution_0234 import Solution
+from solutions.solution_0234 import ListNode, Solution
 
 
 class CaseDict(TypedDict):
@@ -13,7 +13,16 @@ test_cases: List[CaseDict] = [
 ]
 
 
+def arrayToListNode(numbers: List[int]) -> ListNode:
+    result = ListNode()
+    current = result
+    for number in numbers:
+        current.next = ListNode(number)
+        current = current.next
+    return result.next
+
+
 def test_solution():
     for test_case in test_cases:
-        actual_result = Solution().isPalindrome(test_case["input"])
+        actual_result = Solution().isPalindrome(arrayToListNode(test_case["input"]))
         assert actual_result == test_case["expected"]

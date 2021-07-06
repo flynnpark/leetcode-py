@@ -1,4 +1,3 @@
-# Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -7,4 +6,17 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        pass
+        slow = fast = head
+        reverse = None
+
+        while fast and fast.next:
+            fast = fast.next.next
+            reverse, reverse.next, slow = slow, reverse, slow.next
+
+        if fast:
+            slow = slow.next
+
+        while reverse and reverse.val == slow.val:
+            reverse, slow = reverse.next, slow.next
+
+        return not reverse
