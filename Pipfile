@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pytest = "*"
 black = "*"
+pre-commit = "*"
 
 [dev-packages]
 
