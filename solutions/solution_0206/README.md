@@ -27,3 +27,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 - `-5000 <= Node.val <= 5000`
 
 **Follow up:** A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+## 해결 방법
+
+주어진 링크드리스트를 뒤집는 문제이다. 여기서는 `node.next`를 `prev`로 계속 연결하는 방식으로 간단하게 해결했다. `node`를 `head`로, `prev`를 `None`으로 초깃값을 정해준 후, `node.next`를 `next`에 임시 저장하고, `node.next`를 `prev`로 교체한다. 그 이후 `node`를 `prev`에 임시 저장하고, 이전에 저장한 `next`(원래의 `node.next`)를 `node`로 교체한다. 이를 `node`가 존재하지 않을때까지 계속해서 반복하면 된다.
