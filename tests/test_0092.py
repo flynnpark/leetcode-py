@@ -19,8 +19,12 @@ test_cases: List[CaseDict] = [
 
 def test_solution():
     for test_case in test_cases:
-        head = ListNode.from_list(test_case["input"])
+        head = ListNode.from_list(test_case["input"]["head"])
         expected = test_case["expected"]
-        actual = Solution().reverseBetween(head)
+        actual = Solution().reverseBetween(
+            head=head,
+            left=test_case["input"]["left"],
+            right=test_case["input"]["right"],
+        )
         actual = ListNode.to_list(actual)
         assert actual == expected

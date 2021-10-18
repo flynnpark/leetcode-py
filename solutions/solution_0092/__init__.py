@@ -33,4 +33,23 @@ class Solution:
     def reverseBetween(
         self, head: Optional[ListNode], left: int, right: int
     ) -> Optional[ListNode]:
-        pass
+        if not head:
+            return None
+
+        if left == right:
+            return head
+
+        new_head = start = ListNode(0)
+        new_head.next = head
+
+        for _ in range(left - 1):
+            start = start.next
+        end = start.next
+
+        for _ in range(right - left):
+            temp = start.next
+            start.next = end.next
+            end.next = end.next.next
+            start.next.next = temp
+
+        return new_head.next
