@@ -1,15 +1,20 @@
 class MyQueue:
     def __init__(self):
-        pass
+        self.input = []
+        self.output = []
 
     def push(self, x: int) -> None:
-        pass
+        self.input.append(x)
 
     def pop(self) -> int:
-        pass
+        self.peek()
+        return self.output.pop()
 
     def peek(self) -> int:
-        pass
+        if not self.output:
+            while self.input:
+                self.output.append(self.input.pop())
+        return self.output[-1]
 
     def empty(self) -> bool:
-        pass
+        return self.input == [] and self.output == []
