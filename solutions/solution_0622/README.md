@@ -42,3 +42,7 @@ myCircularQueue.Rear();     // return 4
 - `1 <= k <= 1000`
 - `0 <= value <= 1000`
 - At most `3000` calls will be made to `enQueue`, `deQueue`, `Front`, `Rear`, `isEmpty`, and `isFull`.
+
+## 해결 방법
+
+원형 큐를 구현하는 문제이다. 여기서는 배열을 사용하여 구현했다. 문제 설명에 맞게 각 함수들을 정의하였다. 딱히 복잡한 부분은 없으므로 설명은 패스한다.
