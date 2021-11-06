@@ -40,3 +40,7 @@ myCircularDeque.getFront();     // return 4
 - `1 <= k <= 1000`
 - `0 <= value <= 1000`
 - At most `2000` calls will be made to `insertFront`, `insertLast`, `deleteFront`, `deleteLast`, `getFront`, `getRear`, `isEmpty`, `isFull`.
+
+## 해결 방법
+
+원형 데크(`deque`)를 만드는 문제이다. 본인은 이 문제를 리스트를 사용해서 해결하였다. 데크의 특성만 잘 처리하도록 하면 크게 어렵지 않은 문제이다.
