@@ -17,7 +17,7 @@ test_cases: List[CaseDict] = [
 
 def test_solution():
     for test_case in test_cases:
-        input = ListNode.from_list(test_case["input"])
+        input = [ListNode.from_list(l) for l in test_case["input"]]
         expected = test_case["expected"]
         actual = Solution().mergeKLists(input)
         assert ListNode.to_list(actual) == expected
