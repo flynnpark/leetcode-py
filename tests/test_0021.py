@@ -1,25 +1,19 @@
-from typing import List, TypedDict
+from typing import TypedDict
+
 from solutions.solution_0021 import ListNode, Solution
 
-
-class CaseInput(TypedDict):
-    l1: ListNode
-    l2: ListNode
+CaseInput = TypedDict("CaseInput", {"l1": list[int], "l2": list[int]})
+CaseDict = TypedDict("CaseDict", {"input": CaseInput, "expected": list[int]})
 
 
-class CaseDict(TypedDict):
-    input: CaseInput
-    expected: str
-
-
-test_cases: List[CaseDict] = [
+test_cases: list[CaseDict] = [
     {"input": {"l1": [1, 2, 4], "l2": [1, 3, 4]}, "expected": [1, 1, 2, 3, 4, 4]},
     {"input": {"l1": [], "l2": []}, "expected": []},
     {"input": {"l1": [], "l2": [0]}, "expected": [0]},
 ]
 
 
-def arrayToListNode(numbers: List[int]) -> ListNode:
+def arrayToListNode(numbers: list[int]) -> ListNode:
     result = ListNode()
     current = result
     for number in numbers:

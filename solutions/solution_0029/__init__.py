@@ -14,4 +14,4 @@ class Solution:
         if not is_positive:
             res = -res
 
-        return min(max(-(2 ** 31), res), 2 ** 31 - 1)
+        return min(max(-(2**31), res), 2**31 - 1)

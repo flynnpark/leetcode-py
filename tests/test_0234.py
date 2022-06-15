@@ -1,4 +1,5 @@
 from typing import List, TypedDict
+
 from solutions.solution_0234 import ListNode, Solution
 
 
@@ -13,7 +14,7 @@ test_cases: List[CaseDict] = [
 ]
 
 
-def arrayToListNode(numbers: List[int]) -> ListNode:
+def arrayToListNode(numbers: List[int]) -> ListNode | None:
     result = ListNode()
     current = result
     for number in numbers:

@@ -1,14 +1,11 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 from solutions.solution_0739 import Solution
 
-
-class CaseDict(TypedDict):
-    head: List[int]
-    expected: List[int]
+CaseDict = TypedDict("CaseDict", {"input": list[int], "expected": list[int]})
 
 
-test_cases: List[CaseDict] = [
+test_cases: list[CaseDict] = [
     {
         "input": [73, 74, 75, 71, 69, 72, 76, 73],
         "expected": [1, 1, 4, 2, 1, 1, 0, 0],
