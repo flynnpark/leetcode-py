@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         dict_nums = {}
         for index, num in enumerate(nums):
             rest = target - num
@@ -12,3 +9,4 @@ class Solution:
             # 그 외의 경우
             else:
                 dict_nums[num] = index
+        return []

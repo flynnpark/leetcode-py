@@ -1,6 +1,9 @@
 # Definition for singly-linked list.
+from typing import Optional
+
+
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val: Optional[int] = 0, next: Optional['ListNode'] = None):
         self.val = val
         self.next = next
 
@@ -15,11 +18,11 @@ class ListNode:
 
 
 class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         result = ListNode(None)
         current = result
 
-        while l1 and l2:
+        while l1 and l2 and l1.val and l2.val:
             if l1.val < l2.val:
                 current.next = l1
                 l1 = l1.next
@@ -36,12 +39,12 @@ class Solution:
 
         return result.next
 
-    def mergeTwoListsRecursive(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoListsRecursive(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         if not l1:
             return l2
         if not l2:
             return l1
-        if l1.val < l2.val:
+        if l1.val and l2.val and l1.val < l2.val:
             l1.next = self.mergeTwoListsRecursive(l1.next, l2)
             return l1
         else:
