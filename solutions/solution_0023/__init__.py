@@ -21,7 +21,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: "ListNode") -> List[int]:
+    def to_list(head: Optional["ListNode"]) -> List[int]:
         l = []
         while head:
             l.append(head.val)
@@ -31,7 +31,7 @@ class ListNode:
 
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> Optional[ListNode]:
-        root = result = ListNode(None)
+        root = result = ListNode(0)
         heap = []
 
         for i in range(len(lists)):

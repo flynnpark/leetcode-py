@@ -2,7 +2,7 @@ from typing import List, Optional
 
 
 class ListNode:
-    def __init__(self, val: Optional[int] = 0, next: Optional["ListNode"] = None):
+    def __init__(self, val: Optional[int] = None, next: Optional["ListNode"] = None):
         self.val = val
         self.next = next
 
@@ -20,7 +20,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: "ListNode") -> List[int]:
+    def to_list(head: Optional["ListNode"]) -> List[int]:
         l = []
         while head:
             l.append(head.val)

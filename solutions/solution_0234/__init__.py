@@ -8,18 +8,18 @@ class ListNode:
 
 
 class Solution:
-    def isPalindrome(self, head: ListNode) -> bool:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
         slow = fast = head
         reverse = None
 
-        while fast and fast.next:
+        while fast and fast.next and slow:
             fast = fast.next.next
             reverse, reverse.next, slow = slow, reverse, slow.next
 
-        if fast:
+        if fast and slow:
             slow = slow.next
 
-        while reverse and reverse.val == slow.val:
+        while reverse and slow and reverse.val == slow.val:
             reverse, slow = reverse.next, slow.next
 
         return not reverse

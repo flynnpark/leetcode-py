@@ -9,7 +9,6 @@ class ListNode:
 
     def __eq__(self, other):
         while self and other and self.val == other.val:
-            print(self.val == other.val)
             self = self.next
             other = other.next
         if not self and not other:

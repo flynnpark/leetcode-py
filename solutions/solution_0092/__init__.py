@@ -21,7 +21,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: "ListNode") -> List[int]:
+    def to_list(head: Optional["ListNode"]) -> List[int]:
         l = []
         while head:
             l.append(head.val)
@@ -30,9 +30,7 @@ class ListNode:
 
 
 class Solution:
-    def reverseBetween(
-        self, head: Optional[ListNode], left: int, right: int
-    ) -> Optional[ListNode]:
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if not head:
             return None
 
@@ -43,10 +41,14 @@ class Solution:
         new_head.next = head
 
         for _ in range(left - 1):
+            if not start.next:
+                return head
             start = start.next
         end = start.next
 
         for _ in range(right - left):
+            if not end or not end.next:
+                return head
             temp = start.next
             start.next = end.next
             end.next = end.next.next
