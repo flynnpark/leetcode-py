@@ -2,7 +2,7 @@ from typing import Optional
 
 
 class ListNode:
-    def __init__(self, value: int):
+    def __init__(self, value: Optional[int]):
         self.value = value
         self.next: Optional[ListNode] = None
         self.prev: Optional[ListNode] = None
@@ -20,13 +20,16 @@ class MyCircularDeque:
         node = ListNode(value)
         node.prev = preNode
         node.next = preNode.next
-        preNode.next.prev = node
+        if preNode.next:
+            preNode.next.prev = node
         preNode.next = node
         self.count += 1
 
     def removeNode(self, preNode: ListNode):
-        preNode.prev.next = preNode.next
-        preNode.next.prev = preNode.prev
+        if preNode.prev:
+            preNode.prev.next = preNode.next
+        if preNode.next:
+            preNode.next.prev = preNode.prev
         self.count -= 1
 
     def insertFront(self, value: int) -> bool:
@@ -40,8 +43,11 @@ class MyCircularDeque:
         if self.isFull():
             return False
 
-        self.addNode(value, self.tail.prev)
-        return True
+        if self.tail.prev:
+            self.addNode(value, self.tail.prev)
+            return True
+
+        return False
 
     def deleteFront(self) -> bool:
         if self.count == 0:
@@ -54,20 +60,29 @@ class MyCircularDeque:
         if self.count == 0:
             return False
 
-        self.removeNode(self.tail.prev.prev)
-        return True
+        if self.tail.prev:
+            self.removeNode(self.tail.prev)
+            return True
+
+        return False
 
     def getFront(self) -> int:
         if self.count == 0:
             return -1
 
-        return self.head.next.value
+        if self.head.next and self.head.next.value is not None:
+            return self.head.next.value
+
+        return -1
 
     def getRear(self) -> int:
         if self.count == 0:
             return -1
 
-        return self.tail.prev.value
+        if self.tail.prev and self.tail.prev.value is not None:
+            return self.tail.prev.value
+
+        return -1
 
     def isEmpty(self) -> bool:
         return self.count == 0
