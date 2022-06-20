@@ -2,10 +2,7 @@ from typing import List, TypedDict
 
 from solutions.solution_0005 import Solution
 
-
-class CaseDict(TypedDict):
-    input: str
-    expected: str
+CaseDict = TypedDict('CaseDict', {'input': str, 'expected': List[str]})
 
 
 test_cases: List[CaseDict] = [

@@ -3,17 +3,17 @@ from typing import List, Optional
 
 
 class ListNode:
-    def __init__(self, val: int = 0, next: Optional["ListNode"] = None):
+    def __init__(self, val: Optional[int] = None, next: Optional["ListNode"] = None):
         self.val = val
         self.next = next
 
     @staticmethod
-    def from_list(l: List[int]) -> Optional["ListNode"]:
-        head = None
-        prev = None
+    def from_list(l: List[int]) -> "ListNode":
+        head = ListNode(None)
+        prev = ListNode(None)
         for i in l:
             node = ListNode(i)
-            if prev:
+            if prev.val is not None:
                 prev.next = node
             else:
                 head = node
@@ -24,7 +24,8 @@ class ListNode:
     def to_list(head: Optional["ListNode"]) -> List[int]:
         l = []
         while head:
-            l.append(head.val)
+            if head.val is not None:
+                l.append(head.val)
             head = head.next
         return l
 

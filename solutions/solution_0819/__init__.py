@@ -10,4 +10,4 @@ class Solution:
         for word in words:
             if word not in banned:
                 counts[word] += 1
-        return max(counts, key=counts.get)
+        return max(counts, key=counts.get)  # type: ignore

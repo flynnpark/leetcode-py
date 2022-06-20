@@ -1,6 +1,9 @@
+from typing import Any
+
+
 class MyCircularQueue:
     def __init__(self, k: int):
-        self.queue = [None] * k
+        self.queue: list[Any] = [None] * k
         self.max_length = k
         self.front = 0
         self.rear = 0

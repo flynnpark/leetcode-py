@@ -20,10 +20,11 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: "ListNode") -> List[int]:
+    def to_list(head: Optional["ListNode"]) -> List[int]:
         l = []
         while head:
-            l.append(head.val)
+            if head.val is not None:
+                l.append(head.val)
             head = head.next
         return l
 

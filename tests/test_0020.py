@@ -1,10 +1,8 @@
 from typing import List, TypedDict
+
 from solutions.solution_0020 import Solution
 
-
-class CaseDict(TypedDict):
-    input: List[str]
-    expected: str
+CaseDict = TypedDict('CaseDict', {'input': str, 'expected': bool})
 
 
 test_cases: List[CaseDict] = [
