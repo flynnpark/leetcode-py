@@ -1,6 +1,5 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        print('Characters', s)
         used = {}
         max_length = start = 0
         for index, char in enumerate(s):
