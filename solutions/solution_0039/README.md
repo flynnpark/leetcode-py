@@ -31,3 +31,16 @@ These are the only two combinations.</code></pre>
 - `1 <= candidates[i] <= 200`
 - All elements of `candidates` are **distinct**.
 - `1 <= target <= 500`
+
+## 해결 방법
+
+주어진 숫자의 배열인 `candidates`의 원소들을 가지고 원하는 수(`target`)을 만들어낼 수 있는 모든 조합을 만들어내는 문제이다. 그래프를 만들어 탐색하며 각각의 값들을 더하다가 합이 `target`와 같아지면 그 때까지의 값들을 결과에 저장하면 된다.
+
+1. DFS를 사용할 것이고, 인자로 원하는 결과값인 `rest_target`, 현재 숫자의 위치인 `index`, 그리고 지금까지의 경로인 `path`를 인자로 받는다.
+2. `rest_target`이 0이면 결과에 현재까지의 경로를 저장한다.
+3. `rest_target`이 0보다 작으면 `target`을 만들어낼 수 없다는 뜻이므로 백트래킹 한다.
+4. 2, 3에 해당하지 않는 경우 반복문을 돌면서 재귀탐색 한다.
+5. `index`와 `len(candidates)` 사이의 범위 `i`에 대해서
+6. `rest_target`에서 `candidates[i]`를 뺀 값을 다음 `rest_target`으로, 다음 `index`로 `i`로, 다음 `path`에 `candidates[i]`를 추가한 경로를 저장한다.
+7. 주어진 `candidates`의 첫 번째 숫자부터 확인해야 하므로 `dfs(target, 0, [])`를 호출한다.
+8. 만들어진 `result`를 반환한다.
