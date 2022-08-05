@@ -23,3 +23,9 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 
 - `1 <= prices.length <= 10<sup>5</sup>`
 - `0 <= prices[i] <= 10<sup>4</sup>`
+
+## 해결 방법
+
+`i`번째 일의 주식 가격 정보를 담고 있는 `prices` 배열이 주어지고, 한 번의 거래로 낼 수 있는 최대 이익을 찾는 문제이다. 쉽게 생각하면 저점에 사서 고점에 팔면 된다.
+
+여기서는 간단하게 `min_price`라는 변수를 사용하여 `prices` 배열을 순회하면서 최소 가격을 업데이트 하고, 현재 가격 `price`와 현재 시점의 최소 가격 `min_price`의 차이를 계산하여 최대 이익을 수하도록 계산했다.
