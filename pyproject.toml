@@ -4,14 +4,17 @@ version = "0.1.0"
 description = "LeetCode with Python"
 authors = ["Flynn <wphestiraid@gmail.com>"]
 
-[tool.poetry.dependencies]
-python = "^3.10"
 
-[tool.poetry.dev-dependencies]
-black = "^22.3.0"
-isort = "^5.10.1"
-pytest = "^7.1.2"
-pycln = "^1.3.3"
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+pytest = "^7.3.1"
+pycln = "^2.1.3"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

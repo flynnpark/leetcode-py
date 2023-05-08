@@ -1,13 +1,7 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
-  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
-  "python.sortImports.args": [
-    "--profile",
-    "black",
-    "--src",
-    "${workspaceFolder}"
-  ],
+  "isort.args": ["--profile", "black", "--src", "${workspaceFolder}"],
   "[python]": {
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
