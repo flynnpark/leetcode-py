@@ -1,5 +1,7 @@
 from typing import List, TypedDict
 
+import pytest
+
 from . import Solution
 
 
@@ -28,8 +30,11 @@ test_cases: list[CaseDict] = [
 ]
 
 
-def test_solution():
-    for test_case in test_cases:
-        nums = test_case['input']['nums']
-        Solution().moveZeroes(**test_case["input"])
-        assert nums == test_case["expected"]
+@pytest.mark.parametrize(
+    'test_case',
+    test_cases,
+)
+def test_solution(test_case: CaseDict):
+    nums = test_case['input']['nums']
+    Solution().moveZeroes(**test_case["input"])
+    assert nums == test_case["expected"]
