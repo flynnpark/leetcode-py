@@ -2,20 +2,24 @@ from typing import TypedDict
 
 from . import Solution
 
-CaseDict = TypedDict("CastDict", {"input": list[int], "expected": list[list[int]]})
+
+class CaseDict(TypedDict):
+    input: list[int]
+    expected: list[list[int]]
+
 
 test_cases: list[CaseDict] = [
     {
-        "input": [1, 2, 3],
-        "expected": [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]],
+        'input': [1, 2, 3],
+        'expected': [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]],
     },
     {
-        "input": [0, 1],
-        "expected": [[0, 1], [1, 0]],
+        'input': [0, 1],
+        'expected': [[0, 1], [1, 0]],
     },
     {
-        "input": [1],
-        "expected": [[1]],
+        'input': [1],
+        'expected': [[1]],
     },
 ]
 

@@ -3,29 +3,57 @@ name = "leetcode-py"
 version = "0.1.0"
 description = "LeetCode with Python"
 authors = ["Flynn <wphestiraid@gmail.com>"]
-
+package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.11"
-
+python = "~3.11"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.7.0"
-isort = "^5.12.0"
+black = "==24.4.2"
 pytest = "^7.4.0"
-pycln = "^2.2.2"
-pyupgrade = "^3.10.1"
-pre-commit = "^3.3.3"
-
+pre-commit = "^3.7.1"
+ruff = "==0.4.9"
+mypy = "^1.10.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
+include = '\.pyi?$'
 line-length = 120
-target-version = ['py311']
 skip-string-normalization = true
+target-version = ['py311']
+preview = true
+extend-exclude = ".*_pb2.*\\.py"
 
-[tool.isort]
-profile = "black"
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+    "PL", # pylint
+]
+ignore = [
+    "E501",    # line too long, handled by black
+    "E711",    # Comparison to None should be cond is None
+    "E712",    # Comparison to True should be cond is True or if cond:
+    "B008",    # do not perform function calls in argument defaults
+    "C901",    # too complex
+    "PLR0913", # too many arguments to function call
+    "B028",    # no-explicit-stacklevel
+]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "auto"
