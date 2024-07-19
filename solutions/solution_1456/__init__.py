@@ -1,9 +1,6 @@
-import sys
-
-
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
-        vowels = "aeiou"
+        vowels = 'aeiou'
         max_vowels_length = 0
         current_substr_length = 0
 

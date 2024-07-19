@@ -1,9 +1,8 @@
 import sys
-from typing import List
 
 
 class Solution:
-    def increasingTriplet(self, nums: List[int]) -> bool:
+    def increasingTriplet(self, nums: list[int]) -> bool:
         first = sys.maxsize
         second = sys.maxsize
 

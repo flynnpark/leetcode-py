@@ -47,10 +47,16 @@ ignore = [
     "E501",    # line too long, handled by black
     "E711",    # Comparison to None should be cond is None
     "E712",    # Comparison to True should be cond is True or if cond:
+    "E741",    # ambiguous variable name
     "B008",    # do not perform function calls in argument defaults
     "C901",    # too complex
     "PLR0913", # too many arguments to function call
     "B028",    # no-explicit-stacklevel
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/test_solution.py" = [
+    "PLR2004", # Magic value used in comparision
 ]
 
 [tool.ruff.format]

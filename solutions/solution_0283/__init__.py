@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
+    def moveZeroes(self, nums: list[int]) -> None:
         slow = 0
         for fast in range(len(nums)):
             if nums[fast] != 0 and nums[slow] == 0:

@@ -1,14 +1,14 @@
 import heapq
-from typing import List, Optional
+from typing import Optional
 
 
 class ListNode:
-    def __init__(self, val: Optional[int] = None, next: Optional["ListNode"] = None):
+    def __init__(self, val: int | None = None, next: Optional['ListNode'] = None):
         self.val = val
         self.next = next
 
     @staticmethod
-    def from_list(l: List[int]) -> "ListNode":
+    def from_list(l: list[int]) -> 'ListNode':
         head = ListNode(None)
         prev = ListNode(None)
         for i in l:
@@ -21,7 +21,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: Optional["ListNode"]) -> List[int]:
+    def to_list(head: Optional['ListNode']) -> list[int]:
         l = []
         while head:
             if head.val is not None:
@@ -31,7 +31,7 @@ class ListNode:
 
 
 class Solution:
-    def mergeKLists(self, lists: List[ListNode]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode]) -> ListNode | None:
         root = result = ListNode(0)
         heap = []
 

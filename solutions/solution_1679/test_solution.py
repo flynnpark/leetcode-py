@@ -1,4 +1,4 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 import pytest
 
@@ -6,7 +6,7 @@ from . import Solution
 
 
 class InputDict(TypedDict):
-    nums: List[int]
+    nums: list[int]
     k: int
 
 
@@ -17,18 +17,18 @@ class CaseDict(TypedDict):
 
 test_cases: list[CaseDict] = [
     {
-        "input": {
-            "nums": [1, 2, 3, 4],
-            "k": 5,
+        'input': {
+            'nums': [1, 2, 3, 4],
+            'k': 5,
         },
-        "expected": 2,
+        'expected': 2,
     },
     {
-        "input": {
-            "nums": [3, 1, 3, 4, 3],
-            "k": 6,
+        'input': {
+            'nums': [3, 1, 3, 4, 3],
+            'k': 6,
         },
-        "expected": 1,
+        'expected': 1,
     },
 ]
 
@@ -38,5 +38,5 @@ test_cases: list[CaseDict] = [
     test_cases,
 )
 def test_solution(test_case: CaseDict):
-    result = Solution().maxOperations(**test_case["input"])
-    assert result == test_case["expected"]
+    result = Solution().maxOperations(**test_case['input'])
+    assert result == test_case['expected']

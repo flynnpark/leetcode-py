@@ -1,12 +1,11 @@
 import collections
-from typing import Optional
 
 
 class ListNode:
-    def __init__(self, key: Optional[int] = None, value=None):
-        self.key: Optional[int] = key
-        self.value: Optional[int] = value
-        self.next: Optional[ListNode] = None
+    def __init__(self, key: int | None = None, value=None):
+        self.key: int | None = key
+        self.value: int | None = value
+        self.next: ListNode | None = None
 
 
 class MyHashMap:

@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def compress(self, chars: List[str]) -> int:
+    def compress(self, chars: list[str]) -> int:
         temp = []
         count = 1
         for i in range(1, len(chars)):

@@ -1,20 +1,20 @@
-from typing import Any, List
+from typing import Any
 
 from . import Solution
 
-input_values = [["eat", "tea", "tan", "ate", "nat", "bat"], [""], ["a"]]
+input_values = [['eat', 'tea', 'tan', 'ate', 'nat', 'bat'], [''], ['a']]
 expected_outputs = [
     [
-        ["bat"],
-        ["nat", "tan"],
-        ["ate", "eat", "tea"],
+        ['bat'],
+        ['nat', 'tan'],
+        ['ate', 'eat', 'tea'],
     ],
-    [[""]],
-    [["a"]],
+    [['']],
+    [['a']],
 ]
 
 
-def sort_2d_list(list_item: List[List[Any]]) -> List[List[Any]]:
+def sort_2d_list(list_item: list[list[Any]]) -> list[list[Any]]:
     result = []
     for item in list_item:
         result.append(sorted(item))

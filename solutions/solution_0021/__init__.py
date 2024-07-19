@@ -3,7 +3,7 @@ from typing import Optional
 
 
 class ListNode:
-    def __init__(self, val: Optional[int] = 0, next: Optional['ListNode'] = None):
+    def __init__(self, val: int | None = 0, next: Optional['ListNode'] = None):
         self.val = val
         self.next = next
 
@@ -17,7 +17,7 @@ class ListNode:
 
 
 class Solution:
-    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
         result = ListNode(None)
         current = result
 
@@ -38,7 +38,7 @@ class Solution:
 
         return result.next
 
-    def mergeTwoListsRecursive(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoListsRecursive(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
         if not l1:
             return l2
         if not l2:

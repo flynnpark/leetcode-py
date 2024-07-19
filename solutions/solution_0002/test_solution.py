@@ -1,9 +1,7 @@
-from typing import List
-
 from . import ListNode, Solution
 
 
-def arrayToListNode(numbers: List[int]) -> ListNode | None:
+def arrayToListNode(numbers: list[int]) -> ListNode | None:
     result = ListNode()
     current = result
     for number in numbers:

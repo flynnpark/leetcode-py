@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         stack = []
         result = [0] * len(temperatures)
 

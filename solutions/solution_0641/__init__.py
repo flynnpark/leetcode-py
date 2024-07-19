@@ -1,11 +1,8 @@
-from typing import Optional
-
-
 class ListNode:
-    def __init__(self, value: Optional[int]):
+    def __init__(self, value: int | None):
         self.value = value
-        self.next: Optional[ListNode] = None
-        self.prev: Optional[ListNode] = None
+        self.next: ListNode | None = None
+        self.prev: ListNode | None = None
 
 
 class MyCircularDeque:

@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+    def reorderLogFiles(self, logs: list[str]) -> list[str]:
         letters = []
         digits = []
 
@@ -12,7 +9,5 @@ class Solution:
             else:
                 letters.append(log)
 
-        letters.sort(
-            key=lambda letter_log: (letter_log.split()[1:], letter_log.split()[0])
-        )
+        letters.sort(key=lambda letter_log: (letter_log.split()[1:], letter_log.split()[0]))
         return letters + digits

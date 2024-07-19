@@ -1,4 +1,4 @@
-graph = {
+graph: dict[int, list[int]] = {
     1: [2, 3, 4],
     2: [5],
     3: [5],
@@ -9,7 +9,9 @@ graph = {
 }
 
 
-def recursive_dfs(v: int, discovered: list[int] = []) -> list[int]:
+def recursive_dfs(v: int, discovered: list[int] | None = None) -> list[int]:
+    if discovered is None:
+        discovered = []
     discovered.append(v)
     for w in graph[v]:
         if w not in discovered:

@@ -8,7 +8,7 @@ class ListNode:
 
 
 class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    def isPalindrome(self, head: ListNode | None) -> bool:
         slow = fast = head
         reverse = None
 

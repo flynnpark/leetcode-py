@@ -19,9 +19,9 @@ class ListNode:
 class Solution:
     def addTwoNumbers(
         self,
-        l1: Optional[ListNode],
-        l2: Optional[ListNode],
-    ) -> Optional[ListNode]:
+        l1: ListNode | None,
+        l2: ListNode | None,
+    ) -> ListNode | None:
         result = ListNode(0)
         current = result
         carry = 0

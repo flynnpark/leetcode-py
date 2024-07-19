@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 
 
 class ListNode:
@@ -7,7 +7,7 @@ class ListNode:
         self.next = next
 
     @staticmethod
-    def from_list(l: List[int]) -> Optional["ListNode"]:
+    def from_list(l: list[int]) -> Optional['ListNode']:
         head = None
         prev = None
         for i in l:
@@ -20,7 +20,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: Optional["ListNode"]) -> List[int]:
+    def to_list(head: Optional['ListNode']) -> list[int]:
         l = []
         while head:
             if head.val is not None:
@@ -30,7 +30,7 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
         node, prev = head, None
 
         while node:

@@ -1,10 +1,10 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 from . import Solution
 
 
 class InputDict(TypedDict):
-    chars: List[str]
+    chars: list[str]
 
 
 class CaseDict(TypedDict):
@@ -14,27 +14,27 @@ class CaseDict(TypedDict):
 
 test_cases: list[CaseDict] = [
     {
-        "input": {
-            "chars": ["a", "a", "b", "b", "c", "c", "c"],
+        'input': {
+            'chars': ['a', 'a', 'b', 'b', 'c', 'c', 'c'],
         },
-        "expected": 6,
+        'expected': 6,
     },
     {
-        "input": {
-            "chars": ["a"],
+        'input': {
+            'chars': ['a'],
         },
-        "expected": 1,
+        'expected': 1,
     },
     {
-        "input": {
-            "chars": ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"],
+        'input': {
+            'chars': ['a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'],
         },
-        "expected": 4,
+        'expected': 4,
     },
 ]
 
 
 def test_solution():
     for test_case in test_cases:
-        result = Solution().compress(**test_case["input"])
-        assert result == test_case["expected"]
+        result = Solution().compress(**test_case['input'])
+        assert result == test_case['expected']

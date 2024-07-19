@@ -1,4 +1,4 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 import pytest
 
@@ -6,7 +6,7 @@ from . import Solution
 
 
 class InputDict(TypedDict):
-    nums: List[int]
+    nums: list[int]
     k: int
 
 
@@ -38,5 +38,5 @@ test_cases: list[CaseDict] = [
     test_cases,
 )
 def test_solution(test_case: CaseDict):
-    result = Solution().findMaxAverage(**test_case["input"])
-    assert result == test_case["expected"]
+    result = Solution().findMaxAverage(**test_case['input'])
+    assert result == test_case['expected']

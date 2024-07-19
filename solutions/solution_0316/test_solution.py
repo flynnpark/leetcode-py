@@ -1,20 +1,23 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 from . import Solution
 
-CaseDict = TypedDict("CaseDict", {"input": str, "expected": str})
+
+class CaseDict(TypedDict):
+    input: str
+    expected: str
 
 
-test_cases: List[CaseDict] = [
+test_cases: list[CaseDict] = [
     {
-        "input": "bcabc",
-        "expected": "abc",
+        'input': 'bcabc',
+        'expected': 'abc',
     },
-    {"input": "cbacdcbc", "expected": "acdb"},
+    {'input': 'cbacdcbc', 'expected': 'acdb'},
 ]
 
 
 def test_solution():
     for test_case in test_cases:
-        result = Solution().removeDuplicateLetters(test_case["input"])
-        assert result == test_case["expected"]
+        result = Solution().removeDuplicateLetters(test_case['input'])
+        assert result == test_case['expected']

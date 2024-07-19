@@ -1,13 +1,13 @@
-from typing import List, Optional
+from typing import Optional
 
 
 class ListNode:
-    def __init__(self, val: Optional[int] = None, next: Optional["ListNode"] = None):
+    def __init__(self, val: int | None = None, next: Optional['ListNode'] = None):
         self.val = val
         self.next = next
 
     @staticmethod
-    def from_list(l: List[int]) -> Optional["ListNode"]:
+    def from_list(l: list[int]) -> Optional['ListNode']:
         head = None
         prev = None
         for i in l:
@@ -20,7 +20,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def to_list(head: Optional["ListNode"]) -> List[int]:
+    def to_list(head: Optional['ListNode']) -> list[int]:
         l = []
         while head:
             l.append(head.val)
@@ -29,7 +29,7 @@ class ListNode:
 
 
 class Solution:
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def swapPairs(self, head: ListNode | None) -> ListNode | None:
         if head and head.next:
             p = head.next
             head.next = self.swapPairs(p.next)
